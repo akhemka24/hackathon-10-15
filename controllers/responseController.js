@@ -1,91 +1,91 @@
-const Event = require('../models/Response.js');
+const Response = require('../models/Response.js');
 
 module.exports = {
-	/** Display list of all Events */
+	/** Display list of all Responses */
 	response_list: async(_req, res, next) => {
 		try {
-			const events = await Event.find();
+			const responses = await Response.find();
 			res.status(200).json(events);
 		  } catch (err) {
 			next(err);
 		  }
 	},
 
-	/** Display details for a specific Event */
+	/** Display details for a specific Response */
 	response_detail: async(req, res,next) => {
-		res.send('Event detail: ' + req.params.id);
+		res.send('Response detail: ' + req.params.id);
 		try {
-			const event = await Event.findById(req.params.id);
-			res.status(200).json(event);
+			const response = await Response.findById(req.params.id);
+			res.status(200).json(response);
 		  } catch (err) {
 			next(err);
 		  }
 	},
 
-	/** Display Event create form on GET */
+	/** Display Response create form on GET */
 	response_create_get: async(_req, res, next) => {
 	},
 
-	/** Handle Event create on POST */
+	/** Handle Response create on POST */
 	response_create_post: async(_req, res,next) => {
-		const newEvent = new Event(_req.body)
+		const newResponse = new Response(_req.body)
 		try {
-			const savedEvent = await newEvent.save();
-			res.status(200).json(savedEvent)
+			const savedResponse = await newResponse.save();
+			res.status(200).json(savedResponse)
 		}
 		catch (err) {
 			next(err)
 		}
-		res.send('Event Create POST');
+		res.send('Response Create POST');
 	},
 
-	/** Display Event delete form on GET */
+	/** Display Response delete form on GET */
 	response_delete_get: async(_req, res,next) => {
-		res.send('Event Delete GET');
+		res.send('Response Delete GET');
 		try {
-			await Event.findByIdAndDelete(req.params.id);
-			res.status(200).json("Event has been deleted.");
+			await Response.findByIdAndDelete(req.params.id);
+			res.status(200).json("Response has been deleted.");
 		  } catch (err) {
 			next(err);
 		  }
 		},
 
-	/** Handle Event delete on POST */
+	/** Handle Response delete on POST */
 	response_delete_post: async(_req, res,next) => {
-		res.send('Event Delete POST');
+		res.send('Response Delete POST');
 		try {
-			await Event.findByIdAndDelete(req.params.id);
-			res.status(200).json("Event has been deleted.");
+			await Response.findByIdAndDelete(req.params.id);
+			res.status(200).json("Response has been deleted.");
 		  } catch (err) {
 			next(err);
 		  }
 	},
 
-	/** Display Event update form on GET */
+	/** Display Response update form on GET */
 	response_update_get: async(_req, res, next) => {
-		res.send('Event Update GET');
+		res.send('Response Update GET');
 		try {
-			const updatedEvent = await Event.findByIdAndUpdate(
+			const updatedResponse = await Response.findByIdAndUpdate(
 			  req.params.id,
 			  { $set: req.body },
 			  { new: true }
 			);
-			res.status(200).json(updatedEvent);
+			res.status(200).json(updatedResponse);
 		  } catch (err) {
 			next(err);
 		  }
 	},
 
-	/** Handle Event update on POST */
+	/** Handle Response update on POST */
 	response_update_post: async(_req, res, next) => {
-		res.send('Event Update POST');
+		res.send('Response Update POST');
 		try {
-			const updatedEvent = await Event.findByIdAndUpdate(
+			const updatedResponse = await Response.findByIdAndUpdate(
 			  req.params.id,
 			  { $set: req.body },
 			  { new: true }
 			);
-			res.status(200).json(updatedEvent);
+			res.status(200).json(updatedResponse)
 		  } catch (err) {
 			next(err);
 		  }

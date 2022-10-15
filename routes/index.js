@@ -2,60 +2,59 @@ const express = require('express');
 const router = express.Router();
 
 /** Require controller modules */
-const event_controller = require('../controllers/eventController.js');
-const organization_controller = require('../controllers/organizationController.js');
-const user_controller = require('../controllers/userController.js');
+const client_controller = require('../controllers/clientController.js');
+const response_controller = require('../controllers/responseController.js');
 
-/// EVENT ROUTES ///
+/// Client ROUTES ///
 
-/** GET request to create an Event */
-router.get('/client/create', event_controller.event_create_get);
+/** GET request to create an Client */
+router.get('/client/create', client_controller.client_create_get);
 
-/** POST request to create an Event */
-router.post('/client/create', event_controller.event_create_post);
+/** POST request to create an Client*/
+router.post('/client/create', client_controller.client_create_post);
 
-/** GET request to delete an Event */
-router.get('/client/:id/delete', event_controller.event_delete_get);
+/** GET request to delete an Client*/
+router.get('/client/:id/delete', client_controller.client_delete_get);
 
-/** POST request to delete an Event */
-router.post('/client/:id/delete', event_controller.event_delete_post);
+/** POST request to delete an Client*/
+router.post('/client/:id/delete', client_controller.client_delete_post);
 
-/** GET request to update an Event */
-router.get('/client/:id/update', event_controller.event_update_get);
+/** GET request to update an Client*/
+router.get('/client/:id/update', client_controller.client_update_get);
 
-/** POST request to update an Event */
-router.post('/client/:id/update', event_controller.event_update_post);
+/** POST request to update an Client*/
+router.post('/client/:id/update', client_controller.client_update_post);
 
-/** GET request for one particular Event */
-router.get('/client/:id', event_controller.event_detail);
+/** GET request for one particular Client*/
+router.get('/client/:id', client_controller.client_detail);
 
-/** GET request for a list of all Events */
-router.get('/client', event_controller.event_list);
+/** GET request for a list of all Clients*/
+router.get('/client', client_controller.client_list);
 
 /// ORGANIZATION ROUTES ///
 
-/** GET request to create an Organization */
-router.get('/response/create', organization_controller.organization_create_get);
+/** GET request to create a Response */
+router.get('/response/create', response_controller.response_create_get);
 
-/** POST request to create an Organization */
-router.post('/response/create', organization_controller.organization_create_post);
+/** POST request to create a Response*/
+router.post('/response/create', response_controller.response_create_post);
 
-/** GET request to delete an Organization */
-router.get('/response/:id/delete', organization_controller.organization_delete_get);
+/** GET request to delete an Response */
+router.get('/response/:id/delete', response_controller.response_delete_get);
 
-/** POST request to delete an Organization */
-router.post('/response/:id/delete', organization_controller.organization_delete_post);
+/** POST request to delete an Response */
+router.post('/response/:id/delete', response_controller.response_delete_post);
 
-/** GET request to update an Organization */
-router.get('/response/:id/update', organization_controller.organization_update_get);
+/** GET request to update an Response */
+router.get('/response/:id/update', response_controller.response_update_get);
 
 /** POST request to update an Organization */
-router.post('/response/:id/update', organization_controller.organization_update_post);
+router.post('/response/:id/update', response_controller.response_update_post);
 
 /** GET request for one particular Organization */
-router.get('/response/:id', organization_controller.organization_detail);
+router.get('/response/:id', response_controller.response_detail);
 
 /** GET request for a list of all Organizations */
-router.get('/response', organization_controller.organization_list);
+router.get('/response', response_controller.response_list);
 
 module.exports = router;
