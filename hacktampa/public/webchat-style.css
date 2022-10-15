@@ -1,0 +1,5 @@
+[data-cognigy-webchat-root]
+  [data-cognigy-webchat-toggle].webchat-toggle-button {
+  background-image: none;
+  background-color: rgb(88, 195, 229);
+}
