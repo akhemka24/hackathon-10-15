@@ -1,91 +1,87 @@
-const Event = require('../models/Client.js');
+const Client = require('../models/Client.js');
 
 module.exports = {
-	/** Display list of all Events */
+	/** Display list of all Clients */
 	client_list: async(_req, res, next) => {
 		try {
-			const events = await Event.find();
+			const clients = await Client.find();
 			res.status(200).json(events);
 		  } catch (err) {
 			next(err);
 		  }
 	},
 
-	/** Display details for a specific Event */
+	/** Display details for a specific Client */
 	client_detail: async(req, res,next) => {
-		res.send('Event detail: ' + req.params.id);
+		res.send('Client detail: ' + req.params.id);
 		try {
-			const event = await Event.findById(req.params.id);
+			const client = await Client.findById(req.params.id);
 			res.status(200).json(event);
 		  } catch (err) {
 			next(err);
 		  }
 	},
 
-	/** Display Event create form on GET */
-	client_create_get: async(_req, res, next) => {
-	},
-
-	/** Handle Event create on POST */
+	/** Handle Client create on POST */
 	client_create_post: async(_req, res,next) => {
-		const newEvent = new Event(_req.body)
+		const newClient = new Client(_req.body)
 		try {
-			const savedEvent = await newEvent.save();
-			res.status(200).json(savedEvent)
+			const savedClient = await newClient.save();
+			res.status(200).json(savedClient)
 		}
 		catch (err) {
 			next(err)
 		}
-		res.send('Event Create POST');
+		res.send('Client Create POST');
 	},
 
-	/** Display Event delete form on GET */
+	/** Delete Client on GET*/
 	client_delete_get: async(_req, res,next) => {
-		res.send('Event Delete GET');
+		res.send('Client Delete GET');
 		try {
-			await Event.findByIdAndDelete(req.params.id);
-			res.status(200).json("Event has been deleted.");
+			await Client.findByIdAndDelete(req.params.id);
+			res.status(200).json("Client has been deleted.");
 		  } catch (err) {
 			next(err);
 		  }
 		},
 
-	/** Handle Event delete on POST */
+	/** Handle Client delete on POST */
 	client_delete_post: async(_req, res,next) => {
-		res.send('Event Delete POST');
+		res.send('Client Delete POST');
 		try {
-			await Event.findByIdAndDelete(req.params.id);
-			res.status(200).json("Event has been deleted.");
+			await Client.findByIdAndDelete(req.params.id);
+			res.status(200).json("Client has been deleted.");
 		  } catch (err) {
 			next(err);
 		  }
 	},
 
-	/** Display Event update form on GET */
+	/** Display Client update form on GET */
 	client_update_get: async(_req, res, next) => {
-		res.send('Event Update GET');
+		res.send('Client Update GET');
 		try {
-			const updatedEvent = await Event.findByIdAndUpdate(
+			const updatedEvent = await Client.findByIdAndUpdate(
 			  req.params.id,
 			  { $set: req.body },
 			  { new: true }
 			);
-			res.status(200).json(updatedEvent);
+			res.status(200).json(updatedClient);
 		  } catch (err) {
 			next(err);
 		  }
 	},
 
-	/** Handle Event update on POST */
+	/** Handle Client update on POST */
 	client_update_post: async(_req, res, next) => {
-		res.send('Event Update POST');
+		res.send('Client Update POST');
 		try {
-			const updatedEvent = await Event.findByIdAndUpdate(
+			const updatedClient = await Client.findByIdAndUpdate(
 			  req.params.id,
 			  { $set: req.body },
 			  { new: true }
 			);
-			res.status(200).json(updatedEvent);
+			res.status(200).json(updatedClient);
 		  } catch (err) {
 			next(err);
 		  }
