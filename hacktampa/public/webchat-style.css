@@ -14,9 +14,7 @@
   border-radius: 0;
 }
 
-#root {
-  height: 100vh;
-  
+body{
   background-color: #2343e6;
 }
 
