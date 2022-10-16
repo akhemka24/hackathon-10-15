@@ -5,7 +5,7 @@ module.exports = {
 	client_list: async(_req, res, next) => {
 		try {
 			const clients = await Client.find();
-			res.status(200).json(events);
+			res.status(200).json(clients);
 		  } catch (err) {
 			next(err);
 		  }
@@ -16,7 +16,7 @@ module.exports = {
 		res.send('Client detail: ' + req.params.id);
 		try {
 			const client = await Client.findById(req.params.id);
-			res.status(200).json(event);
+			res.status(200).json(client);
 		  } catch (err) {
 			next(err);
 		  }
