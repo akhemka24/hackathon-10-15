@@ -10,7 +10,7 @@ require('dotenv').config({ path: './config.env' });
 
 const app = express();
 const DATABASE_CONNECTION = process.env.ATLAS_URI;
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 console.log(DATABASE_CONNECTION)
 
