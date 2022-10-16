@@ -7,9 +7,6 @@ const response_controller = require('../controllers/responseController.js');
 
 /// Client ROUTES ///
 
-/** GET request to create an Client */
-router.get('/client/create', client_controller.client_create_get);
-
 /** POST request to create an Client*/
 router.post('/client/create', client_controller.client_create_post);
 
