@@ -1,3 +1,4 @@
+import "@fontsource/yusei-magic"
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -10,11 +11,11 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
+/*
 let data;
-document.addEventListener("keyup", function(event) {
+document.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
-    setTimeout(function(){
+    setTimeout(function () {
       for (const div of document.querySelectorAll("div")) {
         if (div.textContent.includes("date") && div.textContent[0] == '{') {
           data = div.textContent;
@@ -22,12 +23,12 @@ document.addEventListener("keyup", function(event) {
           fetch('http://localhost:3000/mentalDb/', {
             method: 'POST',
             body: obj
-        })
+          })
           console.log(obj);
         }
       }
-  }, 2000);
-    }
+    }, 2000);
+  }
 });
-
+*/
 
