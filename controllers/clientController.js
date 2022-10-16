@@ -61,7 +61,7 @@ module.exports = {
 	client_update_get: async(_req, res, next) => {
 		res.send('Client Update GET');
 		try {
-			const updatedEvent = await Client.findByIdAndUpdate(
+			const updatedClient = await Client.findByIdAndUpdate(
 			  req.params.id,
 			  { $set: req.body },
 			  { new: true }
