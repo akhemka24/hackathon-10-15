@@ -27,7 +27,7 @@ console.log("do we get here?")
 
 /** set up routes */
 
-/** middlewares */
+/** midd0mlewares */
 app.use(cors());
 app.use(express.json());
 app.use(helmet());
