@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 let ClientSchema = new mongoose.Schema(
 	{
-		_id: mongoose.Schema.Types.ObjectId,
 		date: {
 			type: Date,
 			required: true
