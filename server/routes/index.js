@@ -3,7 +3,6 @@ const router = express.Router();
 
 /** Require controller modules */
 const client_controller = require('../controllers/clientController.js');
-const response_controller = require('../controllers/responseController.js');
 
 /// Client ROUTES ///
 
