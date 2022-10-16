@@ -1,13 +1,11 @@
-
+import "@fontsource/yusei-magic"
 import './App.css';
-import {Helmet} from "react-helmet";
+import Body from "./components/Body"
 function App() {
   return (
     <div>
-      <h1>hi</h1>
 
-      
-    
+      <Body />
 
     </div>
   );
